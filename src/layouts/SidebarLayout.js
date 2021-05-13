@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { VersionSwitcher } from '@/components/VersionSwitcher'
-import { createContext, forwardRef, useRef } from 'react'
+import { createContext, forwardRef, useMemo, useRef } from 'react'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import clsx from 'clsx'
 import { gradients } from '@/utils/gradients'
@@ -14,13 +13,13 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
       <Link href={isPublished ? href : fallbackHref}>
         <a
           className={clsx('px-3 py-2 transition-colors duration-200 relative block', {
-            'text-cyan-700': isActive,
+            'text-indigo-700': isActive,
             'hover:text-gray-900 text-gray-500': !isActive && isPublished,
             'text-gray-400': !isActive && !isPublished,
           })}
         >
           <span
-            className={clsx('rounded-md absolute inset-0 bg-cyan-50', {
+            className={clsx('rounded-md absolute inset-0 bg-indigo-100', {
               'opacity-0': !isActive
             })}
           />
@@ -57,9 +56,6 @@ function Nav({ nav, children, fallbackHref }) {
       ref={scrollRef}
       className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)"
     >
-      <div className="relative flex mb-8 px-3 lg:hidden">
-        <VersionSwitcher />
-      </div>
       <ul>
         <TopLevelNav />
         {children}
@@ -132,6 +128,8 @@ const TopLevelAnchor = forwardRef(
   }
 )
 
+
+
 function TopLevelLink({ href, as, ...props }) {
   if (/^https?:\/\//.test(href)) {
     return <TopLevelAnchor href={href} {...props} />
@@ -148,8 +146,27 @@ function TopLevelNav() {
   let { pathname } = useRouter()
   let current = pathname.split('/')[1]
 
+  const backIcon = useMemo( (props) => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={14.72}
+        height={14.72}
+        viewBox="0 0 873.72 873.72"
+        style={{marginLeft: 10}}
+        {...props}
+      >
+        <path d="M221.325 149.981c-20.379-20.625-53.62-20.824-74.245-.445L15.6 279.448a52.501 52.501 0 00-.445 74.245l131.682 133.271c10.27 10.396 23.804 15.601 37.347 15.601 13.329 0 26.667-5.046 36.898-15.155 20.625-20.379 20.825-53.62.446-74.245l-42.677-43.191H607.38c88.963 0 161.34 72.377 161.34 161.34v4.319c0 43.097-16.781 83.611-47.255 114.084-20.502 20.502-20.502 53.744 0 74.246 10.252 10.252 23.687 15.377 37.123 15.377 13.435 0 26.873-5.127 37.123-15.377 50.305-50.305 78.009-117.188 78.009-188.331v-4.319c0-71.143-27.704-138.026-78.009-188.332-50.305-50.305-117.189-78.009-188.331-78.009H179.641l41.238-40.747c20.626-20.379 20.825-53.619.446-74.244z"
+          fill="#5f6269"
+        />
+      </svg>
+    )
+  },[])
   return (
     <>
+   <li><a href="/docs" class="flex items-center hover:text-gray-900 transition-colors duration-200 mb-4 text-gray-900">
+     
+     {backIcon}<div class="mr-3 px-1 rounded-md bg-gradient-to-br from-pink-500 to-rose-500"></div>Go to main site</a></li>
       <TopLevelLink
         href="/docs"
         isActive={current === '' || current === 'docs'}
@@ -186,7 +203,7 @@ function TopLevelNav() {
           </>
         }
       >
-        Components
+        Company
       </TopLevelLink>
       <TopLevelLink
         href="https://play.tailwindcss.com"
@@ -209,63 +226,10 @@ function TopLevelNav() {
           </>
         }
       >
-        Playground
-      </TopLevelLink>
-      <TopLevelLink
-        href="https://blog.tailwindcss.com"
-        color="teal"
-        className="mb-4"
-        icon={
-          <>
-            <path
-              d="M8 9a1 1 0 011-1h8a1 1 0 011 1v7.5a1.5 1.5 0 01-1.5 1.5h-7A1.5 1.5 0 018 16.5V9z"
-              fill="#6EE7B7"
-            />
-            <path
-              d="M15 7a1 1 0 00-1-1H7a1 1 0 00-1 1v9.5A1.5 1.5 0 007.5 18H16v-.085a1.5 1.5 0 01-1-1.415V7z"
-              fill="#ECFDF5"
-            />
-            <path fill="#A7F3D0" d="M8 8h5v4H8zM8 14h5v2H8z" />
-          </>
-        }
-      >
-        News
-      </TopLevelLink>
-      <TopLevelLink
-        href="/resources"
-        isActive={current === 'resources'}
-        color="blue"
-        className="mb-4"
-        icon={
-          <>
-            <path d="M17 13a1 1 0 011 1v3a1 1 0 01-1 1H8.5a2.5 2.5 0 010-5H17z" fill="#93C5FD" />
-            <path
-              d="M12.743 7.722a1 1 0 011.414 0l2.122 2.121a1 1 0 010 1.414l-6.01 6.01a2.5 2.5 0 11-3.536-3.536l6.01-6.01z"
-              fill="#BFDBFE"
-            />
-            <path d="M6 7a1 1 0 011-1h3a1 1 0 011 1v8.5a2.5 2.5 0 01-5 0V7z" fill="#EFF6FF" />
-            <path d="M9.5 15.5a1 1 0 11-2 0 1 1 0 012 0z" fill="#60A5FA" />
-          </>
-        }
-      >
         Resources
       </TopLevelLink>
-      <TopLevelLink
-        href="https://www.youtube.com/tailwindlabs"
-        color="purple"
-        className="mb-10"
-        icon={
-          <>
-            <circle cx="12" cy="12" r="7" fill="#F3E8FF" />
-            <path
-              d="M14.52 11.136a1 1 0 010 1.728l-3.016 1.759A1 1 0 0110 13.759v-3.518a1 1 0 011.504-.864l3.015 1.76z"
-              fill="#C084FC"
-            />
-          </>
-        }
-      >
-        Screencasts
-      </TopLevelLink>
+
+
     </>
   )
 }

@@ -170,7 +170,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
 
   return (
     <div id={meta.containerId} className="w-full flex">
-      <div className="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
+      <div className="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16" style={{marginLeft: 50,maxWidth: 750, lineHeight: '290%'}}>
         <PageHeader
           title={meta.title}
           description={meta.description}
@@ -213,7 +213,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
           </>
         )}
       </div>
-      <div className="hidden xl:text-sm xl:block flex-none w-64 pl-8 mr-8">
+      <div  style={{marginLeft: 'auto'}} className="hidden xl:text-sm xl:block flex-none w-64 pl-8 mr-8">
         <div className="flex flex-col justify-between overflow-y-auto sticky max-h-(screen-18) pt-10 pb-6 top-18">
           {toc.length > 0 && (
             <div className="mb-8">

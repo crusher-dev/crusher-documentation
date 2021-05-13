@@ -37,3 +37,18 @@
   font-style: normal;
   src: url('../fonts/flow-circular.woff') format('woff');
 }
+
+body{
+  background-color: rgba(250, 250, 250, 0.036);
+}
+
+.to-light-blue-500 {
+  --tw-gradient-to: #161618 !important;
+}
+
+.from-indigo-600 {
+  --tw-gradient-from: #1a1a1d !important;
+ 
+}
+
+

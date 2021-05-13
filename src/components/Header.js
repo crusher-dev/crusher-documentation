@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { VersionSwitcher } from '@/components/VersionSwitcher'
+
 import { Search } from '@/components/Search'
 import clsx from 'clsx'
 import Router from 'next/router'
@@ -180,7 +180,7 @@ export function Header({ navIsOpen, onNavToggle }) {
           <BannerMarkRight className="hidden sm:block absolute left-1/2 transform translate-x-[330px] translate-y-[-357px] w-[848px] h-[513px]" />
           <div className="relative flex justify-center items-center">
             <div className="text-sm font-medium text-white">
-              Just-in-Time: The Next Generation of Tailwind&nbsp;CSS
+              Launching: The best way to ship HQ software thru no-code testing
             </div>
             <span
               aria-hidden="true"
@@ -214,7 +214,7 @@ export function Header({ navIsOpen, onNavToggle }) {
         <div className="flex-auto border-b border-gray-200 h-18 flex items-center justify-between px-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
           <Search />
           <div className="lg:w-64 pl-8 flex-shrink-0 flex items-center justify-end space-x-6">
-            <VersionSwitcher className="hidden lg:block" />
+         
             <a
               href="https://github.com/tailwindlabs/tailwindcss"
               className="text-gray-400 hover:text-gray-500 transition-colors duration-200"
