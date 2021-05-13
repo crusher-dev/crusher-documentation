@@ -88,9 +88,9 @@ export default function App({ Component, pageProps, router }) {
           content={`https://tailwindcss.com${twitterLargeCard}`}
         />
       </Head>
-      {router.pathname !== '/' && (
+   
         <Header navIsOpen={navIsOpen} onNavToggle={(isOpen) => setNavIsOpen(isOpen)} />
-      )}
+  
       <Layout {...layoutProps}>
         <Component {...pageProps} />
       </Layout>

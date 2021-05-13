@@ -116,7 +116,7 @@ export default function DocsLandingPage() {
           </div>
         </section>
 
-        <section className="flex">
+        {/* <section className="flex">
           <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg" style={{
             border: '2px solid #d7d7d7'
           }}>
@@ -138,7 +138,7 @@ export default function DocsLandingPage() {
             </div>
 
           </div>
-        </section>
+        </section> */}
 
        </div>
       <section>

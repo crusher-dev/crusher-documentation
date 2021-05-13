@@ -192,7 +192,7 @@ function TopLevelNav() {
         Documentation
       </TopLevelLink>
       <TopLevelLink
-        href="https://tailwindui.com/components?utm_source=tailwindcss&utm_medium=navigation"
+        href="/company"
         color="violet"
         className="mb-4"
         icon={
@@ -205,7 +205,7 @@ function TopLevelNav() {
       >
         Company
       </TopLevelLink>
-      <TopLevelLink
+      {/* <TopLevelLink
         href="https://play.tailwindcss.com"
         color="amber"
         className="mb-4"
@@ -227,7 +227,7 @@ function TopLevelNav() {
         }
       >
         Resources
-      </TopLevelLink>
+      </TopLevelLink> */}
 
 
     </>
