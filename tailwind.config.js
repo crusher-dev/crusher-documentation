@@ -20,7 +20,7 @@ module.exports = {
       cyan: colors.cyan,
       emerald: colors.emerald,
       fuchsia: colors.fuchsia,
-      gray: colors.coolGray,
+      gray: {...colors.coolGray, 500: '#b6b6b6'},
       green: colors.green,
       indigo: colors.indigo,
       'light-blue': colors.lightBlue,

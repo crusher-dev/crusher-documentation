@@ -14,9 +14,11 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
         <a
           className={clsx('px-3 py-2 transition-colors duration-200 relative block', {
             'text-indigo-700': isActive,
-            'hover:text-gray-900 text-gray-500': !isActive && isPublished,
+            'hover:text-gray-900 text-gray-800': !isActive && isPublished,
             'text-gray-400': !isActive && !isPublished,
           })}
+
+          style={{letterSpacing: '-0.15px'}}
         >
           <span
             className={clsx('rounded-md absolute inset-0 bg-indigo-100', {
