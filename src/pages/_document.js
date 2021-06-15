@@ -22,7 +22,7 @@ export default class Document extends NextDocument {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00b4b6" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
-        <body style={{background: '#fff'}}>
+        <body style={{background: '#fff', color: "#6b7280"}}>
           <Main />
           <NextScript />
           <script> </script>
