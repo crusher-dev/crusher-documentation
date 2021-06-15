@@ -67,7 +67,7 @@ export default function DocsLandingPage() {
         Ship HQ web software fast without wasting time ✨✨
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8">
-      
+
       <section className="flex">
           <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg" style={{
             border: '2px solid #d7d7d7'
@@ -92,29 +92,29 @@ export default function DocsLandingPage() {
           </div>
         </section>
 
-        <section className="flex">
-          <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg" style={{
-            border: '2px solid #d7d7d7'
-          }}>
-            <div className={`w-full flex md:flex-col `}>
-              <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
-                <h2 className="text-xl text-blue-500 font-semibold mb-2">Company</h2>
-                <p className="font-medium text-gray-900  mb-4">
-                  Learn how to get Tailwind set up in your project.
-                </p>
-                <Link href="/docs/installation">
-                  <a className="mt-auto bg-blue-500 hover:bg-opacity-75 transition-colors duration-200 rounded-xl font-semibold py-2 px-4 inline-flex">
-                    Browse now
-                  </a>
-                </Link>
-              </div>
-              <div className={`${styles.image} relative md:pl-6 xl:pl-8 hidden sm:block`}>
-                <GuidesImage className="absolute top-6 left-6 md:static overflow-visible" />
-              </div>
-            </div>
+        {/*<section className="flex">*/}
+        {/*  <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg" style={{*/}
+        {/*    border: '2px solid #d7d7d7'*/}
+        {/*  }}>*/}
+        {/*    <div className={`w-full flex md:flex-col `}>*/}
+        {/*      <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">*/}
+        {/*        <h2 className="text-xl text-blue-500 font-semibold mb-2">Company</h2>*/}
+        {/*        <p className="font-medium text-gray-900  mb-4">*/}
+        {/*          Learn how to get Tailwind set up in your project.*/}
+        {/*        </p>*/}
+        {/*        <Link href="/docs/installation">*/}
+        {/*          <a className="mt-auto bg-blue-500 hover:bg-opacity-75 transition-colors duration-200 rounded-xl font-semibold py-2 px-4 inline-flex">*/}
+        {/*            Browse now*/}
+        {/*          </a>*/}
+        {/*        </Link>*/}
+        {/*      </div>*/}
+        {/*      <div className={`${styles.image} relative md:pl-6 xl:pl-8 hidden sm:block`}>*/}
+        {/*        <GuidesImage className="absolute top-6 left-6 md:static overflow-visible" />*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
 
-          </div>
-        </section>
+        {/*  </div>*/}
+        {/*</section>*/}
 
         {/* <section className="flex">
           <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg" style={{
