@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { createContext, forwardRef, useMemo, useRef } from 'react'
+import {createContext, forwardRef, useMemo, useRef, useState} from 'react'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import clsx from 'clsx'
 import { gradients } from '@/utils/gradients'
@@ -30,10 +30,12 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
   )
 })
 
-function Nav({ nav, children, fallbackHref }) {
+function Nav({ nav, children, fallbackHref=false }) {
   const router = useRouter()
   const activeItemRef = useRef()
   const scrollRef = useRef()
+
+  const [menuOpen, setMenuOpen] = useState(null)
 
   useIsomorphicLayoutEffect(() => {
     if (activeItemRef.current) {
@@ -61,12 +63,14 @@ function Nav({ nav, children, fallbackHref }) {
         {children}
         {nav &&
           Object.keys(nav)
-            .map((category) => {
+            .map((category, i) => {
               let publishedItems = nav[category].filter((item) => item.published !== false)
               if (publishedItems.length === 0 && !fallbackHref) return null
+              const isOpen = (menuOpen!== null ? menuOpen === category : i=== 0);
               return (
                 <li key={category} className="mt-8">
                   <h5
+                    onClick={()=>setMenuOpen(category)}
                     className={clsx(
                       'px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs',
                       {
@@ -75,10 +79,10 @@ function Nav({ nav, children, fallbackHref }) {
                       }
                     )}
                   >
-                    {category}
+                    {category}{!isOpen && (">")}
                   </h5>
                   <ul>
-                    {(fallbackHref ? nav[category] : publishedItems).map((item, i) => (
+                    {isOpen && (fallbackHref ? nav[category] : publishedItems).map((item, i) => (
                       <NavItem
                         key={i}
                         href={item.href}
@@ -165,69 +169,46 @@ function TopLevelNav() {
   return (
     <>
    <li><a href="/docs" class="flex items-center hover:text-gray-900 transition-colors duration-200 mb-4 text-gray-900">
-     
+
      {backIcon}<div class="mr-3 px-1 rounded-md bg-gradient-to-br from-pink-500 to-rose-500"></div>Go to main site</a></li>
-      <TopLevelLink
-        href="/docs"
-        isActive={current === '' || current === 'docs'}
-        color="pink"
-        className="mb-4"
-        icon={
-          <>
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M9 6C10.0929 6 11.1175 6.29218 12 6.80269V16.8027C11.1175 16.2922 10.0929 16 9 16C7.90714 16 6.88252 16.2922 6 16.8027V6.80269C6.88252 6.29218 7.90714 6 9 6Z"
-              fill="#FFF1F2"
-            />
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M15 6C16.0929 6 17.1175 6.29218 18 6.80269V16.8027C17.1175 16.2922 16.0929 16 15 16C13.9071 16 12.8825 16.2922 12 16.8027V6.80269C12.8825 6.29218 13.9071 6 15 6Z"
-              fill="#FECDD3"
-            />
-          </>
-        }
-      >
-        Documentation
-      </TopLevelLink>
-      <TopLevelLink
-        href="/company"
-        color="violet"
-        className="mb-4"
-        icon={
-          <>
-            <path d="M6 9l6-3 6 3v6l-6 3-6-3V9z" fill="#F5F3FF" />
-            <path d="M6 9l6 3v6l-6-3V9z" fill="#DDD6FE" />
-            <path d="M18 9l-6 3v6l6-3V9z" fill="#C4B5FD" />
-          </>
-        }
-      >
-        Company
-      </TopLevelLink>
-      {/* <TopLevelLink
-        href="https://play.tailwindcss.com"
-        color="amber"
-        className="mb-4"
-        icon={
-          <>
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M13.196 6.02a1 1 0 01.785 1.176l-2 10a1 1 0 01-1.961-.392l2-10a1 1 0 011.176-.784z"
-              fill="#FDE68A"
-            />
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M15.293 9.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-2 2a1 1 0 01-1.414-1.414L16.586 12l-1.293-1.293a1 1 0 010-1.414zM8.707 9.293a1 1 0 010 1.414L7.414 12l1.293 1.293a1 1 0 11-1.414 1.414l-2-2a1 1 0 010-1.414l2-2a1 1 0 011.414 0z"
-              fill="#FDF4FF"
-            />
-          </>
-        }
-      >
-        Resources
-      </TopLevelLink> */}
+      {/*<TopLevelLink*/}
+      {/*  href="/docs"*/}
+      {/*  isActive={current === '' || current === 'docs'}*/}
+      {/*  color="pink"*/}
+      {/*  className="mb-4"*/}
+      {/*  icon={*/}
+      {/*    <>*/}
+      {/*      <path*/}
+      {/*        fillRule="evenodd"*/}
+      {/*        clipRule="evenodd"*/}
+      {/*        d="M9 6C10.0929 6 11.1175 6.29218 12 6.80269V16.8027C11.1175 16.2922 10.0929 16 9 16C7.90714 16 6.88252 16.2922 6 16.8027V6.80269C6.88252 6.29218 7.90714 6 9 6Z"*/}
+      {/*        fill="#FFF1F2"*/}
+      {/*      />*/}
+      {/*      <path*/}
+      {/*        fillRule="evenodd"*/}
+      {/*        clipRule="evenodd"*/}
+      {/*        d="M15 6C16.0929 6 17.1175 6.29218 18 6.80269V16.8027C17.1175 16.2922 16.0929 16 15 16C13.9071 16 12.8825 16.2922 12 16.8027V6.80269C12.8825 6.29218 13.9071 6 15 6Z"*/}
+      {/*        fill="#FECDD3"*/}
+      {/*      />*/}
+      {/*    </>*/}
+      {/*  }*/}
+      {/*>*/}
+      {/*  Documentation*/}
+      {/*</TopLevelLink>*/}
+      {/*<TopLevelLink*/}
+      {/*  href="/company"*/}
+      {/*  color="violet"*/}
+      {/*  className="mb-4"*/}
+      {/*  icon={*/}
+      {/*    <>*/}
+      {/*      <path d="M6 9l6-3 6 3v6l-6 3-6-3V9z" fill="#F5F3FF" />*/}
+      {/*      <path d="M6 9l6 3v6l-6-3V9z" fill="#DDD6FE" />*/}
+      {/*      <path d="M18 9l-6 3v6l6-3V9z" fill="#C4B5FD" />*/}
+      {/*    </>*/}
+      {/*  }*/}
+      {/*>*/}
+      {/*  Company*/}
+      {/*</TopLevelLink>*/}
 
 
     </>

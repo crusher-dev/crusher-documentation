@@ -173,29 +173,6 @@ function BannerMarkRight(props) {
 export function Header({ navIsOpen, onNavToggle }) {
   return (
     <>
-      <div className="py-2 bg-gradient-to-r from-indigo-600 to-light-blue-500 overflow-hidden">
-        <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-          <BannerMarkMobile className="sm:hidden absolute right-1/2 transform translate-x-[235px] translate-y-[-90px] w-[848px] h-[513px]" />
-          <BannerMarkLeft className="hidden sm:block absolute right-1/2 transform translate-x-[-150px] translate-y-[-250px] w-[848px] h-[513px]" />
-          <BannerMarkRight className="hidden sm:block absolute left-1/2 transform translate-x-[330px] translate-y-[-357px] w-[848px] h-[513px]" />
-          <div className="relative flex justify-center items-center">
-            <div className="text-sm font-medium text-white">
-              Launching: The best way to ship HQ software thru no-code testing
-            </div>
-            <span
-              aria-hidden="true"
-              className="hidden sm:block mx-6 h-6 w-px bg-white bg-opacity-20"
-            ></span>
-            <div className="ml-6 sm:ml-0">
-              <Link href="/docs/just-in-time-mode">
-                <a className="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-blue-500 hover:bg-opacity-90">
-                  Learn more &rarr;
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="sticky top-0 z-40 lg:z-50 w-full max-w-8xl mx-auto bg-white flex-none flex">
         <div className="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center border-b border-gray-200 lg:border-b-0 lg:w-60 xl:w-72">
           <Link href="/">
@@ -206,7 +183,6 @@ export function Header({ navIsOpen, onNavToggle }) {
                 Router.push('/brand')
               }}
             >
-              <span className="sr-only">Tailwind CSS home page</span>
               <Logo className="w-auto h-6" />
             </a>
           </Link>
@@ -214,9 +190,9 @@ export function Header({ navIsOpen, onNavToggle }) {
         <div className="flex-auto border-b border-gray-200 h-18 flex items-center justify-between px-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
           <Search />
           <div className="lg:w-64 pl-8 flex-shrink-0 flex items-center justify-end space-x-6">
-         
+
             <a
-              href="https://github.com/tailwindlabs/tailwindcss"
+              href="https://github.com/crusherdev/crusher"
               className="text-gray-400 hover:text-gray-500 transition-colors duration-200"
             >
               <span className="sr-only">Tailwind CSS on GitHub</span>

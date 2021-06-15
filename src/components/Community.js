@@ -3,7 +3,7 @@ export function Community() {
     <ul className="grid sm:grid-cols-2 gap-6 xl:gap-8">
       <li>
         <a
-          href="https://github.com/tailwindlabs/tailwindcss/discussions"
+          href="https://github.com/crusherdev/crusher"
           className="flex items-start space-x-4"
         >
           <svg fill="currentColor" className="flex-none text-gray-900 w-12 h-12">
@@ -16,7 +16,7 @@ export function Community() {
           </svg>
           <div className="flex-auto">
             <h3 className="font-bold text-gray-900">GitHub Project</h3>
-            <p>Connect with members of the Tailwind CSS community.</p>
+            <p>Connect with members of the Crusher community.</p>
           </div>
         </a>
       </li>
@@ -37,7 +37,7 @@ export function Community() {
           </svg>
           <div className="flex-auto">
             <h3 className="font-bold text-gray-900">Discord</h3>
-            <p>Join our Discord group to chat with other Tailwind users.</p>
+            <p>Join our Discord group to chat with other Crusher users.</p>
           </div>
         </a>
       </li>
@@ -53,11 +53,11 @@ export function Community() {
           </svg>
           <div className="flex-auto">
             <h3 className="font-bold text-gray-900">Twitter</h3>
-            <p>Follow the Tailwind Twitter account for news and updates.</p>
+            <p>Follow the Crusher account for product updates.</p>
           </div>
         </a>
       </li>
-      
+
     </ul>
   )
 }
