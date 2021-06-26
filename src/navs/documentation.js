@@ -2,25 +2,38 @@ import { createPageList } from '@/utils/createPageList'
 
 const pages = createPageList(
   require.context(`../pages/docs/?meta=title,shortTitle,published`, false, /\.mdx$/),
-  'docs'
+  'docs',
 )
 
+
+const referencesPages = createPageList(
+  require.context(`../pages/docs/references/?meta=title,shortTitle,published`, false, /\.mdx$/),
+  'docs/references',
+)
+
+
+console.log(referencesPages)
+
 export const documentationNav = {
-  'Tutorials': [
-    pages['installation'],
+  'Main': [
+    pages['download'],
     ],
-  'Features': [
-    pages['installation'],
-  ],
-  'Deploying': [
-    pages['installation'],
-  ],
-  'Contributing': [pages['installation'],],
+  // 'Tutorials': [
+  //   pages['installation'],
+  //   ],
+  // 'Features': [
+  //   pages['installation'],
+  // ],
+  // 'Deploying': [
+  //   pages['installation'],
+  // ],
+  // 'Contributing': [pages['installation'],],
   'References': [
-    pages['installation'],
+    referencesPages['pricing'],
+    referencesPages['contact-us'],
     {
       title: 'Release Notes',
-      href: 'https://github.com/tailwindlabs/tailwindcss/releases',
+      href: 'https://github.com/crusherdev/crusher/releases',
     },
 
   ]

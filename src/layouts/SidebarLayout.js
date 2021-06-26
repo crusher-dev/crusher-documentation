@@ -68,7 +68,7 @@ function Nav({ nav, children, fallbackHref=false }) {
             .map((category, i) => {
               let publishedItems = nav[category].filter((item) => item.published !== false)
               if (publishedItems.length === 0 && !fallbackHref) return null
-              const isOpen = (menuOpen!== null ? menuOpen === category : i=== 0);
+              const isOpen = true || (menuOpen!== null ? menuOpen === category : i=== 0);
               return (
                 <li key={category} className="mt-8">
                   <h5
