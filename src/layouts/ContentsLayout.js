@@ -32,7 +32,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
       <h5 className="text-gray-900 uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
         On this page
       </h5>
-      <ul className="overflow-x-hidden text-gray-500 font-medium">
+      <ul className="overflow-x-hidden text-gray-100 font-medium">
         {tableOfContents.map((section) => {
           let sectionIsActive =
             currentSection === section.slug ||
@@ -47,7 +47,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
                   className={clsx(
                     'block transform transition-colors duration-200 py-2 hover:text-gray-900',
                     {
-                      'text-gray-900': sectionIsActive,
+                      'text-white': sectionIsActive,
                     }
                   )}
                 >
@@ -71,7 +71,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
                       className={clsx(
                         'block py-2 transition-colors duration-200 hover:text-gray-900 font-medium',
                         {
-                          'text-gray-900': subsectionIsActive,
+                          'text-gray-100': subsectionIsActive,
                         }
                       )}
                     >
@@ -171,7 +171,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
 
   return (
     <>
-    <div id={meta.containerId} className="w-full flex">
+    <div id={meta.containerId} className="w-full flex bg-gray-1000">
       <div className="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16" style={{marginLeft: 50,maxWidth: 750, lineHeight: '290%'}}>
         <PageHeader
           title={meta.title}
@@ -193,7 +193,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
             <div className="flex leading-6 font-medium">
               {prev && (
                 <Link href={prev.href}>
-                  <a className="flex mr-8 transition-colors duration-200 hover:text-gray-900">
+                  <a className="flex mr-8 transition-colors duration-200 hover:text-gray-50">
                     <span aria-hidden="true" className="mr-2">
                       ←
                     </span>
@@ -203,7 +203,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
               )}
               {next && (
                 <Link href={next.href}>
-                  <a className="flex text-right ml-auto transition-colors duration-200 hover:text-gray-900">
+                  <a className="flex text-right ml-auto transition-colors duration-200 hover:text-gray-50">
                     {next.shortTitle || next.title}
                     <span aria-hidden="true" className="ml-2">
                       →
@@ -230,7 +230,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
         </div>
       </div>
     </div>
-      <div className={"min-w-0 flex-auto px-8 sm:px-12 xl:px-16 pt-10 pb-24 lg:pb-16"} style={{ maxWidth: 750, }}>
+      <div className={"min-w-0 bg-gray-1000 flex-auto px-8 sm:px-12 xl:px-16 pt-10 pb-24 lg:pb-16"} style={{ maxWidth: 750, }}>
         <Community/>
       </div>
     </>

@@ -6,7 +6,7 @@ export function PageHeader({ title, description, badge = {}, border = true }) {
   return (
     <div className={clsx('pb-10', { 'border-b border-gray-200 mb-10': border })}>
       <div>
-        <h1 className="inline-block text-3xl font-extrabold text-gray-900 tracking-tight">
+        <h1 className="inline-block text-3xl font-extrabold text-gray-50 tracking-tight">
           {title}
         </h1>
         {badge.key && badge.value && (
@@ -16,7 +16,7 @@ export function PageHeader({ title, description, badge = {}, border = true }) {
           </dl>
         )}
       </div>
-      {description && <p className="mt-1 text-lg text-gray-700">{description}</p>}
+      {description && <p className="mt-1 text-lg text-gray-100">{description}</p>}
     </div>
   )
 }

@@ -99,7 +99,7 @@ export const ClassTable = memo(
                   </th>
                   <th
                     className={clsx(
-                      'z-20 sticky top-0 text-sm font-semibold text-gray-600 bg-white p-0',
+                      'z-20 sticky top-0 text-sm font-semibold text-gray-50 bg-white p-0',
                       {
                         'hidden sm:table-cell': preview,
                       }

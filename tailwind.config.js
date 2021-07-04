@@ -11,7 +11,6 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-
       black: '#000',
       white: '#fff',
 
@@ -20,7 +19,7 @@ module.exports = {
       cyan: colors.cyan,
       emerald: colors.emerald,
       fuchsia: colors.fuchsia,
-      gray: {...colors.coolGray, 500: '#686868'},
+      gray: { ...colors.coolGray, 500: '#686868', 1000: '#18191a' },
       green: colors.green,
       indigo: colors.indigo,
       'light-blue': colors.lightBlue,
@@ -39,7 +38,6 @@ module.exports = {
       teal: colors.teal,
       violet: colors.violet,
       yellow: colors.yellow,
-
       code: {
         punctuation: '#A1E8FF',
         tag: '#D58FFF',

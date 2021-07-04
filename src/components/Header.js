@@ -235,7 +235,7 @@ export function Header({ navIsOpen, onNavToggle }) {
       </div>
      
       <div 
-      style={{background: '#f6f6f6', height: 6, border: '1px solid #ddd'}}></div>
+      style={{background: '#353535', height: 2}}></div>
 
       <button
         type="button"
