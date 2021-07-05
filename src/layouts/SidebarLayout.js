@@ -116,10 +116,10 @@ const TopLevelAnchor = forwardRef(
           href={href}
           onClick={onClick}
           className={clsx(
-            'flex items-center px-3 hover:text-gray-900 transition-colors duration-200',
+            'flex items-center px-3 hover:text-gray-100 transition-colors duration-200',
             className,
             {
-              'text-gray-900': isActive,
+              'text-gray-100': isActive,
             }
           )}
         >

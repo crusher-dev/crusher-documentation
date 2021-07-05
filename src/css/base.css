@@ -3,3 +3,17 @@
 abbr[title] {
   text-decoration: none;
 }
+
+.prose{
+
+  color: #dcdcdc !important;
+}
+
+.prose h2 {
+  color: #dcdcdc !important;
+}
+
+.prose a{
+  color: #dcdcdc !important;
+
+}

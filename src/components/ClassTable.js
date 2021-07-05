@@ -92,7 +92,7 @@ export const ClassTable = memo(
         >
           {custom || (
             <table className="w-full text-left border-collapse">
-              <thead>
+              <thead className="text-indigo-300">
                 <tr>
                   <th className="z-20 sticky top-0 text-sm font-semibold text-gray-600 bg-white p-0">
                     <div className="pb-2 pr-2 border-b border-gray-200">Class</div>

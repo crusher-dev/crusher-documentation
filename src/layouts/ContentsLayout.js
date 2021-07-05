@@ -29,7 +29,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
 
   return (
     <>
-      <h5 className="text-gray-900 uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
+      <h5 className="text-gray-100 uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
         On this page
       </h5>
       <ul className="overflow-x-hidden text-gray-100 font-medium">
@@ -45,7 +45,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
                   href={`#${section.slug}`}
                   onClick={closeNav}
                   className={clsx(
-                    'block transform transition-colors duration-200 py-2 hover:text-gray-900',
+                    'block transform transition-colors duration-200 py-2 hover:text-gray-100',
                     {
                       'text-white': sectionIsActive,
                     }
@@ -69,7 +69,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
                       href={`#${subsection.slug}`}
                       onClick={closeNav}
                       className={clsx(
-                        'block py-2 transition-colors duration-200 hover:text-gray-900 font-medium',
+                        'block py-2 transition-colors duration-200 hover:text-gray-100 font-medium',
                         {
                           'text-gray-100': subsectionIsActive,
                         }

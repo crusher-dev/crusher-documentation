@@ -43,7 +43,7 @@ const { lines } = tokenizeWithLines.html(
             </svg>
           </div>
           <div class="ml-3 w-0 flex-1 pt-0.5">
-            <p class="text-sm font-medium text-gray-900">
+            <p class="text-sm font-medium text-gray-100">
               Successfully saved!
             </p>
             <p class="mt-1 text-sm text-gray-500">
@@ -168,7 +168,7 @@ export function Performance() {
               <dl className="p-4 pb-0 sm:p-6 sm:pb-0">
                 <div className="flex-none w-full pl-18 sm:pl-20 sm:py-0.5">
                   <dt className="text-sm font-medium">Production build</dt>
-                  <dd className="text-3xl sm:text-4xl font-extrabold text-gray-900">
+                  <dd className="text-3xl sm:text-4xl font-extrabold text-gray-100">
                     <Counter from={2413.4} to={8.7} round={1} progress={progress} />
                     KB
                   </dd>

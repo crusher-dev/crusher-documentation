@@ -75,7 +75,7 @@ export default function DocsLandingPage() {
             <div className={`w-full flex md:flex-col `}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
                 <h2 className="text-xl text-pink-500 font-semibold mb-2">Read the docs</h2>
-                <p className="font-medium text-gray-900  mb-4">
+                <p className="font-medium text-gray-100  mb-4">
                   Learn how to get Tailwind set up in your project.
                 </p>
                 <Link href="/docs/installation">
@@ -98,7 +98,7 @@ export default function DocsLandingPage() {
         {/*    <div className={`w-full flex md:flex-col `}>*/}
         {/*      <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">*/}
         {/*        <h2 className="text-xl text-blue-500 font-semibold mb-2">Company</h2>*/}
-        {/*        <p className="font-medium text-gray-900  mb-4">*/}
+        {/*        <p className="font-medium text-gray-100  mb-4">*/}
         {/*          Learn how to get Tailwind set up in your project.*/}
         {/*        </p>*/}
         {/*        <Link href="/docs/installation">*/}
@@ -122,7 +122,7 @@ export default function DocsLandingPage() {
             <div className={`w-full flex md:flex-col `}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
                 <h2 className="text-xl text-violet-500 font-semibold mb-2">Resources</h2>
-                <p className="font-medium text-gray-900  mb-4">
+                <p className="font-medium text-gray-100  mb-4">
                   Learn how to get Tailwind set up in your project.
                 </p>
                 <Link href="/docs/installation">
@@ -140,10 +140,10 @@ export default function DocsLandingPage() {
         </section> */}
       </div>
       <section>
-        <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 mt-16 mb-8">
+        <h2 className="text-2xl tracking-tight font-extrabold text-gray-100 mt-16 mb-8">
           Crusher features
         </h2>
-        <ul className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 xl:gap-8 font-semibold text-gray-900 text-center">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 xl:gap-8 font-semibold text-gray-100 text-center">
           {whatsNew.map((item) => (
             <li key={item.title} className="flex">
               <Link href={item.href}>
@@ -163,7 +163,7 @@ export default function DocsLandingPage() {
       </section>
 
       <section>
-        <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 mt-16 mb-8">
+        <h2 className="text-2xl tracking-tight font-extrabold text-gray-100 mt-16 mb-8">
           Get involved
         </h2>
         <Community />
