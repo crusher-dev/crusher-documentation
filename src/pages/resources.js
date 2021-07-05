@@ -93,7 +93,7 @@ export default function Resources() {
           </div>
         </section>
       </div>
-      <div className="grid sm:grid-cols-3 gap-8 sm:gap-6 xl:gap-8 pb-10 border-b border-gray-200">
+      <div className="grid sm:grid-cols-3 gap-8 sm:gap-6 xl:gap-8 pb-10 border-b text-gray-500">
         <section>
           <h2 className="text-xl text-gray-100 font-bold mb-4">
             JavaScript<span className="sr-only">: Headless UI</span>

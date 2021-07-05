@@ -189,7 +189,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
         </ContentsContext.Provider>
         {(prev || next) && (
           <>
-            <hr className="border-gray-200 mt-10 mb-4" />
+            <hr className="text-gray-500 mt-10 mb-4" />
             <div className="flex leading-6 font-medium">
               {prev && (
                 <Link href={prev.href}>

@@ -611,7 +611,7 @@ function AtApplySection() {
             </h2>
             <dl
               className={clsx(
-                'transition-opacity duration-1500 delay-500 flex flex-wrap divide-y divide-gray-200 border-b border-gray-200',
+                'transition-opacity duration-1500 delay-500 flex flex-wrap divide-y divide-gray-200 border-b text-gray-500',
                 { 'opacity-25': inView }
               )}
             >

@@ -198,7 +198,7 @@ export function Header({ navIsOpen, onNavToggle }) {
       </div> */}
       <div style={{background: '#17191a' || '#584fe0'}}>
       <div className="sticky top-0 z-40 lg:z-50 w-full max-w-8xl mx-auto flex-none flex">
-        <div className="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center border-b border-gray-200 lg:border-b-0 lg:w-60 xl:w-72">
+        <div className="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center border-b text-gray-500 lg:border-b-0 lg:w-60 xl:w-72">
           <Link href="/">
             <a
               className="overflow-hidden w-10 md:w-auto"
@@ -235,7 +235,7 @@ export function Header({ navIsOpen, onNavToggle }) {
       </div>
      
       <div 
-      style={{background: '#353535', height: 2}}></div>
+      style={{background: '#333131', height: 1}}></div>
 
       <button
         type="button"

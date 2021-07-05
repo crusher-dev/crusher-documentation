@@ -12,15 +12,19 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
     <li ref={ref}>
       <Link href={isPublished ? href : fallbackHref}>
         <a
-          className={clsx('px-3 py-2 transition-colors duration-200 relative block', {
-            'text-indigo-300': isActive,
+          className={clsx('px-3 py-2 transition-colors duration-200 relative block rounded-md', {
+            'text-indigo-00': isActive,
             'hover:text-gray-50 text-gray-100': !isActive && isPublished,
             'text-gray-400': !isActive && !isPublished,
           })}
-          style={{ letterSpacing: '-0.15px' }}
+          style={{ letterSpacing: '-0.15px', ...(isActive? {
+            backgroundColor: "transparent !important",
+            border: "1px solid #333131 !important",
+            color: "#fff !important"
+          } : {} )}}
         >
           <span
-            className={clsx('rounded-md absolute inset-0 bg-gray-800', {
+            className={clsx('rounded-md absolute inset-0', {
               'opacity-0': !isActive,
             })}
           />
@@ -75,7 +79,7 @@ function Nav({ nav, children, fallbackHref = false }) {
                     className={clsx(
                       'px-3 mb-3 lg:mb-3 uppercase tracking-wide font-bold text-sm lg:text-xs',
                       {
-                        'text-indigo-300': publishedItems.length > 0,
+                        '': publishedItems.length > 0,
                         'text-white': publishedItems.length === 0,
                       }
                     )}

@@ -80,7 +80,7 @@ export const ClassTable = memo(
     })
 
     return (
-      <div className="border-b border-gray-200 overflow-hidden relative">
+      <div className="border-b text-gray-500 overflow-hidden relative">
         <Heading level={2} id="class-reference" toc={true} className="relative">
           <span className="sr-only">Default class reference</span>
         </Heading>
@@ -95,7 +95,7 @@ export const ClassTable = memo(
               <thead className="text-indigo-300">
                 <tr>
                   <th className="z-20 sticky top-0 text-sm font-semibold text-gray-600 bg-white p-0">
-                    <div className="pb-2 pr-2 border-b border-gray-200">Class</div>
+                    <div className="pb-2 pr-2 border-b text-gray-500">Class</div>
                   </th>
                   <th
                     className={clsx(
@@ -106,14 +106,14 @@ export const ClassTable = memo(
                     )}
                   >
                     <div
-                      className={clsx('pb-2 pl-2 border-b border-gray-200', { 'pr-2': preview })}
+                      className={clsx('pb-2 pl-2 border-b text-gray-500', { 'pr-2': preview })}
                     >
                       Properties
                     </div>
                   </th>
                   {preview && (
                     <th className="z-20 sticky top-0 text-sm font-semibold text-gray-600 bg-white p-0">
-                      <div className="pb-2 pl-2 border-b border-gray-200">
+                      <div className="pb-2 pl-2 border-b text-gray-500">
                         <span className="sr-only">Preview</span>&nbsp;
                       </div>
                     </th>
@@ -131,7 +131,7 @@ export const ClassTable = memo(
                         className={clsx(
                           'py-2 pr-2 font-mono text-xs text-violet-600 whitespace-nowrap',
                           {
-                            'border-t border-gray-200': i !== 0,
+                            'border-t text-gray-500': i !== 0,
                           }
                         )}
                       >
@@ -141,7 +141,7 @@ export const ClassTable = memo(
                         className={clsx(
                           'py-2 pl-2 font-mono text-xs text-light-blue-600 whitespace-pre',
                           {
-                            'border-t border-gray-200': i !== 0,
+                            'border-t text-gray-500': i !== 0,
                             'hidden sm:table-cell sm:pr-2': preview,
                           }
                         )}
@@ -153,7 +153,7 @@ export const ClassTable = memo(
                       </td>
                       {preview &&
                         preview(properties, {
-                          className: i === 0 ? '' : 'border-t border-gray-200',
+                          className: i === 0 ? '' : 'border-t text-gray-500',
                         })}
                     </tr>
                   )
