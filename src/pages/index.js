@@ -55,27 +55,27 @@ const whatsNew = [
   },
 ]
 
-
-
 export default function DocsLandingPage() {
   return (
-    <div className="px-4 sm:px-6 xl:px-8 pt-24 pb-16">
-      <h1 className="text-4xl leading-none font-extrabold text-gray-900 tracking-tight mb-4">
+    <div className="px-4 sm:px-6 xl:px-8 pt-24 pb-16 bg-gray-1000">
+      <h1 className="text-4xl leading-none font-extrabold text-gray-100 tracking-tight mb-4">
         Getting started with Crusher
       </h1>
       <p className="text-xl tracking-tight mb-10">
         Ship HQ web software fast without wasting time ✨✨
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8">
-
-      <section className="flex">
-          <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg" style={{
-            border: '2px solid #d7d7d7'
-          }}>
+        <section className="flex">
+          <div
+            className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg"
+            style={{
+              border: '2px solid #5B5B5B',
+            }}
+          >
             <div className={`w-full flex md:flex-col `}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
                 <h2 className="text-xl text-pink-500 font-semibold mb-2">Read the docs</h2>
-                <p className="font-medium text-gray-900  mb-4">
+                <p className="font-medium text-gray-100  mb-4">
                   Learn how to get Tailwind set up in your project.
                 </p>
                 <Link href="/docs/installation">
@@ -88,7 +88,6 @@ export default function DocsLandingPage() {
                 <GuidesImage className="absolute top-6 left-6 md:static overflow-visible" />
               </div>
             </div>
-
           </div>
         </section>
 
@@ -99,7 +98,7 @@ export default function DocsLandingPage() {
         {/*    <div className={`w-full flex md:flex-col `}>*/}
         {/*      <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">*/}
         {/*        <h2 className="text-xl text-blue-500 font-semibold mb-2">Company</h2>*/}
-        {/*        <p className="font-medium text-gray-900  mb-4">*/}
+        {/*        <p className="font-medium text-gray-100  mb-4">*/}
         {/*          Learn how to get Tailwind set up in your project.*/}
         {/*        </p>*/}
         {/*        <Link href="/docs/installation">*/}
@@ -123,7 +122,7 @@ export default function DocsLandingPage() {
             <div className={`w-full flex md:flex-col `}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
                 <h2 className="text-xl text-violet-500 font-semibold mb-2">Resources</h2>
-                <p className="font-medium text-gray-900  mb-4">
+                <p className="font-medium text-gray-100  mb-4">
                   Learn how to get Tailwind set up in your project.
                 </p>
                 <Link href="/docs/installation">
@@ -139,13 +138,12 @@ export default function DocsLandingPage() {
 
           </div>
         </section> */}
-
-       </div>
+      </div>
       <section>
-        <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 mt-16 mb-8">
+        <h2 className="text-2xl tracking-tight font-extrabold text-gray-100 mt-16 mb-8">
           Crusher features
         </h2>
-        <ul className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 xl:gap-8 font-semibold text-gray-900 text-center">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 xl:gap-8 font-semibold text-gray-100 text-center">
           {whatsNew.map((item) => (
             <li key={item.title} className="flex">
               <Link href={item.href}>
@@ -165,7 +163,7 @@ export default function DocsLandingPage() {
       </section>
 
       <section>
-        <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 mt-16 mb-8">
+        <h2 className="text-2xl tracking-tight font-extrabold text-gray-100 mt-16 mb-8">
           Get involved
         </h2>
         <Community />

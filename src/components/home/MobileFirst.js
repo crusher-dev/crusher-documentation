@@ -204,7 +204,7 @@ function BrowserWindow({ size, onChange, height = 385 }) {
               </div>
             </div>
           </div>
-          <div className="relative bg-white border-t border-gray-200 rounded-b-xl pb-8 -mb-8">
+          <div className="relative bg-white border-t text-gray-500 rounded-b-xl pb-8 -mb-8">
             <div
               className="overflow-auto"
               style={{ height }}

@@ -21,7 +21,7 @@ function Logo({ title, component: Component }) {
 export default function Resources() {
   return (
     <div className="px-4 sm:px-6 md:px-8 pt-10 pb-16">
-      <h1 className="text-3xl text-gray-900 font-extrabold mb-4">Resources</h1>
+      <h1 className="text-3xl text-gray-100 font-extrabold mb-4">Resources</h1>
       <div className="max-w-3xl">
         <div className="text-lg mb-5 space-y-5">
           <p>
@@ -42,7 +42,7 @@ export default function Resources() {
       </div>
       <div className="grid md:grid-cols-2 gap-8 md:gap-6 xl:gap-8 my-8 sm:my-12">
         <section>
-          <h2 className="text-xl text-gray-900 font-bold mb-4">Learn UI Design</h2>
+          <h2 className="text-xl text-gray-100 font-bold mb-4">Learn UI Design</h2>
           <a
             href="https://refactoringui.com/book"
             className="h-40 sm:h-56 xl:h-64 bg-gray-900 bg-cover rounded-3xl mb-6 flex items-center justify-center"
@@ -65,7 +65,7 @@ export default function Resources() {
           </div>
         </section>
         <section>
-          <h2 className="text-xl text-gray-900 font-bold mb-4">Official Tailwind CSS Components</h2>
+          <h2 className="text-xl text-gray-100 font-bold mb-4">Official Tailwind CSS Components</h2>
           <a
             href="https://tailwindui.com/"
             className="h-40 sm:h-56 xl:h-64 bg-gray-300 rounded-3xl mb-6 overflow-hidden flex"
@@ -93,9 +93,9 @@ export default function Resources() {
           </div>
         </section>
       </div>
-      <div className="grid sm:grid-cols-3 gap-8 sm:gap-6 xl:gap-8 pb-10 border-b border-gray-200">
+      <div className="grid sm:grid-cols-3 gap-8 sm:gap-6 xl:gap-8 pb-10 border-b text-gray-500">
         <section>
-          <h2 className="text-xl text-gray-900 font-bold mb-4">
+          <h2 className="text-xl text-gray-100 font-bold mb-4">
             JavaScript<span className="sr-only">: Headless UI</span>
           </h2>
           <a
@@ -110,7 +110,7 @@ export default function Resources() {
           </p>
         </section>
         <section>
-          <h2 className="text-xl text-gray-900 font-bold mb-4">
+          <h2 className="text-xl text-gray-100 font-bold mb-4">
             Icons<span className="sr-only">: Heroicons</span>
           </h2>
           <a
@@ -131,7 +131,7 @@ export default function Resources() {
           </p>
         </section>
         <section>
-          <h2 className="text-xl text-gray-900 font-bold mb-4">
+          <h2 className="text-xl text-gray-100 font-bold mb-4">
             Patterns<span className="sr-only">: Heropatterns</span>
           </h2>
           <a
@@ -154,7 +154,7 @@ export default function Resources() {
         </section>
       </div>
       <section>
-        <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 mt-10 mb-8">
+        <h2 className="text-2xl tracking-tight font-extrabold text-gray-100 mt-10 mb-8">
           Get involved
         </h2>
         <Community />

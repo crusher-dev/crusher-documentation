@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import {createContext, forwardRef, useMemo, useRef, useState} from 'react'
+import { createContext, forwardRef, useMemo, useRef, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import clsx from 'clsx'
 import { gradients } from '@/utils/gradients'
@@ -12,17 +12,20 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
     <li ref={ref}>
       <Link href={isPublished ? href : fallbackHref}>
         <a
-          className={clsx('px-3 py-2 transition-colors duration-200 relative block', {
-            'text-indigo-700': isActive,
-            'hover:text-gray-900 text-gray-800': !isActive && isPublished,
+          className={clsx('px-3 py-2 transition-colors duration-200 relative block rounded-md', {
+            'text-indigo-00': isActive,
+            'hover:text-gray-50 text-gray-100': !isActive && isPublished,
             'text-gray-400': !isActive && !isPublished,
           })}
-
-          style={{letterSpacing: '-0.15px'}}
+          style={{ letterSpacing: '-0.15px', ...(isActive? {
+            backgroundColor: "transparent !important",
+            border: "1px solid #333131 !important",
+            color: "#fff !important"
+          } : {} )}}
         >
           <span
-            className={clsx('rounded-md absolute inset-0 bg-indigo-100', {
-              'opacity-0': !isActive
+            className={clsx('rounded-md absolute inset-0', {
+              'opacity-0': !isActive,
             })}
           />
           <span className="relative">{children}</span>
@@ -32,7 +35,7 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
   )
 })
 
-function Nav({ nav, children, fallbackHref=false }) {
+function Nav({ nav, children, fallbackHref = false }) {
   const router = useRouter()
   const activeItemRef = useRef()
   const scrollRef = useRef()
@@ -68,34 +71,36 @@ function Nav({ nav, children, fallbackHref=false }) {
             .map((category, i) => {
               let publishedItems = nav[category].filter((item) => item.published !== false)
               if (publishedItems.length === 0 && !fallbackHref) return null
-              const isOpen = true || (menuOpen!== null ? menuOpen === category : i=== 0);
+              const isOpen = true || (menuOpen !== null ? menuOpen === category : i === 0)
               return (
                 <li key={category} className="mt-8">
                   <h5
-                    onClick={()=>setMenuOpen(category)}
+                    onClick={() => setMenuOpen(category)}
                     className={clsx(
-                      'px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs',
+                      'px-3 mb-3 lg:mb-3 uppercase tracking-wide font-bold text-sm lg:text-xs',
                       {
-                        'text-gray-900': publishedItems.length > 0,
-                        'text-gray-400': publishedItems.length === 0,
+                        '': publishedItems.length > 0,
+                        'text-white': publishedItems.length === 0,
                       }
                     )}
                   >
-                    {category}{!isOpen && (">")}
+                    {category}
+                    {!isOpen && '>'}
                   </h5>
                   <ul>
-                    {isOpen && (fallbackHref ? nav[category] : publishedItems).map((item, i) => (
-                      <NavItem
-                        key={i}
-                        href={item.href}
-                        isActive={item.href === router.pathname}
-                        ref={item.href === router.pathname ? activeItemRef : undefined}
-                        isPublished={item.published !== false}
-                        fallbackHref={fallbackHref}
-                      >
-                        {item.shortTitle || item.title}
-                      </NavItem>
-                    ))}
+                    {isOpen &&
+                      (fallbackHref ? nav[category] : publishedItems).map((item, i) => (
+                        <NavItem
+                          key={i}
+                          href={item.href}
+                          isActive={item.href === router.pathname}
+                          ref={item.href === router.pathname ? activeItemRef : undefined}
+                          isPublished={item.published !== false}
+                          fallbackHref={fallbackHref}
+                        >
+                          {item.shortTitle || item.title}
+                        </NavItem>
+                      ))}
                   </ul>
                 </li>
               )
@@ -115,10 +120,10 @@ const TopLevelAnchor = forwardRef(
           href={href}
           onClick={onClick}
           className={clsx(
-            'flex items-center px-3 hover:text-gray-900 transition-colors duration-200',
+            'flex items-center px-3 hover:text-gray-100 transition-colors duration-200',
             className,
             {
-              'text-gray-900': isActive,
+              'text-gray-100': isActive,
             }
           )}
         >
@@ -133,8 +138,6 @@ const TopLevelAnchor = forwardRef(
     )
   }
 )
-
-
 
 function TopLevelLink({ href, as, ...props }) {
   if (/^https?:\/\//.test(href)) {
@@ -152,27 +155,35 @@ function TopLevelNav() {
   let { pathname } = useRouter()
   let current = pathname.split('/')[1]
 
-  const backIcon = useMemo( (props) => {
+  const backIcon = useMemo((props) => {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={14.72}
         height={14.72}
         viewBox="0 0 873.72 873.72"
-        style={{marginLeft: 10}}
+        style={{ marginLeft: 10 }}
         {...props}
       >
-        <path d="M221.325 149.981c-20.379-20.625-53.62-20.824-74.245-.445L15.6 279.448a52.501 52.501 0 00-.445 74.245l131.682 133.271c10.27 10.396 23.804 15.601 37.347 15.601 13.329 0 26.667-5.046 36.898-15.155 20.625-20.379 20.825-53.62.446-74.245l-42.677-43.191H607.38c88.963 0 161.34 72.377 161.34 161.34v4.319c0 43.097-16.781 83.611-47.255 114.084-20.502 20.502-20.502 53.744 0 74.246 10.252 10.252 23.687 15.377 37.123 15.377 13.435 0 26.873-5.127 37.123-15.377 50.305-50.305 78.009-117.188 78.009-188.331v-4.319c0-71.143-27.704-138.026-78.009-188.332-50.305-50.305-117.189-78.009-188.331-78.009H179.641l41.238-40.747c20.626-20.379 20.825-53.619.446-74.244z"
+        <path
+          d="M221.325 149.981c-20.379-20.625-53.62-20.824-74.245-.445L15.6 279.448a52.501 52.501 0 00-.445 74.245l131.682 133.271c10.27 10.396 23.804 15.601 37.347 15.601 13.329 0 26.667-5.046 36.898-15.155 20.625-20.379 20.825-53.62.446-74.245l-42.677-43.191H607.38c88.963 0 161.34 72.377 161.34 161.34v4.319c0 43.097-16.781 83.611-47.255 114.084-20.502 20.502-20.502 53.744 0 74.246 10.252 10.252 23.687 15.377 37.123 15.377 13.435 0 26.873-5.127 37.123-15.377 50.305-50.305 78.009-117.188 78.009-188.331v-4.319c0-71.143-27.704-138.026-78.009-188.332-50.305-50.305-117.189-78.009-188.331-78.009H179.641l41.238-40.747c20.626-20.379 20.825-53.619.446-74.244z"
           fill="#5f6269"
         />
       </svg>
     )
-  },[])
+  }, [])
   return (
     <>
-   <li><a href="/docs" class="flex items-center hover:text-gray-900 transition-colors duration-200 mb-4 text-gray-900">
-
-     {backIcon}<div class="mr-3 px-1 rounded-md bg-gradient-to-br from-pink-500 to-rose-500"></div>Go to main site</a></li>
+      <li>
+        <a
+          href="/docs"
+          class="flex items-center hover:text-gray-50 transition-colors duration-200 mb-4 text-white"
+        >
+          {backIcon}
+          <div class="mr-3 px-1 rounded-md bg-gradient-to-br from-pink-500 to-rose-500"></div>Go to
+          main site
+        </a>
+      </li>
       {/*<TopLevelLink*/}
       {/*  href="/docs"*/}
       {/*  isActive={current === '' || current === 'docs'}*/}
@@ -211,8 +222,6 @@ function TopLevelNav() {
       {/*>*/}
       {/*  Company*/}
       {/*</TopLevelLink>*/}
-
-
     </>
   )
 }
@@ -226,7 +235,7 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
             id="sidebar"
             onClick={() => setNavIsOpen(false)}
             className={clsx(
-              'fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block',
+              'fixed z-40 inset-0 flex-none  h-full text-white w-full lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block bg-gray-1000',
               {
                 hidden: !navIsOpen,
               }
@@ -237,7 +246,7 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
               onClick={(e) => e.stopPropagation()}
               className="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0"
             >
-              <div className="hidden lg:block h-12 pointer-events-none absolute inset-x-0 z-10 bg-gradient-to-b from-white" />
+              {/* <div className="hidden lg:block h-12 pointer-events-none absolute inset-x-0 z-10 bg-gradient-to-b from-white" /> */}
               <Nav nav={nav} fallbackHref={fallbackHref}>
                 {sidebar}
               </Nav>

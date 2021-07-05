@@ -144,7 +144,7 @@ function DarkModeSwitch({ enabled, onChange }) {
         height="24"
         fill="currentColor"
         className={clsx('transition-colors duration-200', {
-          'text-gray-900': enabled,
+          'text-gray-100': enabled,
           'text-gray-300': !enabled,
         })}
       >

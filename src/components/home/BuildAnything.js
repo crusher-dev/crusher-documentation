@@ -116,10 +116,10 @@ const code = {
     <div class="flex items-baseline my-8">
       <div class="space-x-2 flex text-sm font-medium">
         <div class="w-9 h-9 flex items-center justify-center rounded-full bg-purple-700 text-white">XS</div>
-        <div class="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200">S</div>
-        <div class="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200">M</div>
-        <div class="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200">L</div>
-        <div class="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200">XL</div>
+        <div class="w-9 h-9 flex items-center justify-center rounded-full border-2 text-gray-500">S</div>
+        <div class="w-9 h-9 flex items-center justify-center rounded-full border-2 text-gray-500">M</div>
+        <div class="w-9 h-9 flex items-center justify-center rounded-full border-2 text-gray-500">L</div>
+        <div class="w-9 h-9 flex items-center justify-center rounded-full border-2 text-gray-500">XL</div>
       </div>
       <div class="ml-3 text-sm text-gray-500 underline">Size Guide</div>
     </div>
@@ -160,9 +160,9 @@ const code = {
     <div class="flex space-x-3 mb-3 text-sm font-semibold uppercase">
       <div class="flex-auto flex space-x-3">
         <div class="w-1/2 flex items-center justify-center bg-black text-white">Buy now</div>
-        <div class="w-1/2 flex items-center justify-center border border-gray-200">Add to bag</div>
+        <div class="w-1/2 flex items-center justify-center border text-gray-500">Add to bag</div>
       </div>
-      <div class="flex-none flex items-center justify-center w-12 h-12 text-gray-900 border border-gray-200">
+      <div class="flex-none flex items-center justify-center w-12 h-12 text-gray-100 border text-gray-500">
         <svg width="20" height="20" fill="currentColor">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
         </svg>

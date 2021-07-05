@@ -3,3 +3,31 @@
 abbr[title] {
   text-decoration: none;
 }
+
+.prose{
+
+  color: #dcdcdc !important;
+}
+
+.prose h2 {
+  color: #dcdcdc !important;
+}
+
+.prose a{
+  color: #bdb1ff !important;
+  text-decoration: underline !important;
+  box-shadow: none !important;
+
+}
+
+th{
+  color: #cecece;
+}
+
+hr{
+  border-color: #333131 !important;
+}
+
+* {
+  border-color: #333131 !important;
+}

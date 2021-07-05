@@ -51,7 +51,7 @@ export function IntegrationGuides() {
           <Link href={guide.link} key={guide.name}>
             <a className="flex flex-col items-center py-4 shadow-sm ring-1 ring-black ring-opacity-5 rounded-xl">
               <Logo className="h-12 w-auto" />
-              <div className="mt-3 text-sm text-gray-900 font-semibold sm:mt-2">{guide.name}</div>
+              <div className="mt-3 text-sm text-gray-50 font-semibold sm:mt-2">{guide.name}</div>
             </a>
           </Link>
         )

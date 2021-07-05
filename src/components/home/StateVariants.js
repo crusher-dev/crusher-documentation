@@ -57,11 +57,11 @@ const {
     <svg width="20" height="20" fill="currentColor" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
     </svg>
-    <input class="(input-focus)focus:border-light-blue-500 (input-focus)focus:ring-1 (input-focus)focus:ring-light-blue-500 (input-focus)focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10" type="text" aria-label="Filter projects" placeholder="Filter projects" />
+    <input class="(input-focus)focus:border-light-blue-500 (input-focus)focus:ring-1 (input-focus)focus:ring-light-blue-500 (input-focus)focus:outline-none w-full text-sm text-black placeholder-gray-500 border text-gray-500 rounded-md py-2 pl-10" type="text" aria-label="Filter projects" placeholder="Filter projects" />
   </form>
   <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
     <li x-for="item in items">
-      <a :href="item.url" class="(item-hover)hover:bg-light-blue-500 (item-hover)hover:border-transparent (item-hover)hover:shadow-lg group block rounded-lg p-4 border border-gray-200">
+      <a :href="item.url" class="(item-hover)hover:bg-light-blue-500 (item-hover)hover:border-transparent (item-hover)hover:shadow-lg group block rounded-lg p-4 border text-gray-500">
         <dl class="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
           <div>
             <dt class="sr-only">Title</dt>
@@ -85,7 +85,7 @@ const {
       </a>
     </li>
     <li class="(new-hover)hover:shadow-lg flex rounded-lg">
-      <a href="/new" class="(new-hover)hover:border-transparent (new-hover)hover:shadow-xs w-full flex items-center justify-center rounded-lg border-2 border-dashed border-gray-200 text-sm font-medium py-4">
+      <a href="/new" class="(new-hover)hover:border-transparent (new-hover)hover:shadow-xs w-full flex items-center justify-center rounded-lg border-2 border-dashed text-gray-500 text-sm font-medium py-4">
         New Project
       </a>
     </li>
@@ -215,7 +215,7 @@ export function StateVariants() {
                   type="text"
                   aria-label="Filter projects"
                   placeholder="Filter projects"
-                  className="w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10 focus:border-light-blue-500 focus:outline-none focus:ring-1 focus:ring-light-blue-500"
+                  className="w-full text-sm text-black placeholder-gray-500 border text-gray-500 rounded-md py-2 pl-10 focus:border-light-blue-500 focus:outline-none focus:ring-1 focus:ring-light-blue-500"
                 />
               </form>
               <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
@@ -225,7 +225,7 @@ export function StateVariants() {
                     className={i === a.length - 1 ? 'hidden sm:block lg:hidden xl:block' : ''}
                   >
                     <div
-                      className="group cursor-pointer rounded-lg p-4 border border-gray-200 hover:bg-light-blue-500 hover:border-transparent hover:shadow-lg"
+                      className="group cursor-pointer rounded-lg p-4 border text-gray-500 hover:bg-light-blue-500 hover:border-transparent hover:shadow-lg"
                       onMouseEnter={() => {
                         setStates((states) => [...states, 'item-hover'])
                       }}
@@ -270,7 +270,7 @@ export function StateVariants() {
                 ))}
                 <li className="hover:shadow-lg flex rounded-lg">
                   <div
-                    className="hover:border-transparent hover:shadow-xs w-full flex items-center justify-center rounded-lg border-2 border-dashed border-gray-200 text-sm font-medium py-4 cursor-pointer"
+                    className="hover:border-transparent hover:shadow-xs w-full flex items-center justify-center rounded-lg border-2 border-dashed text-gray-500 text-sm font-medium py-4 cursor-pointer"
                     onMouseEnter={() => {
                       setStates((states) => [...states, 'new-hover'])
                     }}

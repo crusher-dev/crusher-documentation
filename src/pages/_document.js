@@ -10,7 +10,7 @@ export default class Document extends NextDocument {
     return (
       <Html
         lang="en"
-        className={`text-gray-500 antialiased ${
+        className={`text-gray-50 bg-gray-1000 antialiased ${
           this.props.dangerousAsPath.startsWith('/examples/') ? '' : 'bg-white'
         }`}
       >
@@ -22,7 +22,7 @@ export default class Document extends NextDocument {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00b4b6" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
-        <body style={{background: '#fff', color: "#6b7280"}}>
+        <body className=" bg-gray-1000 ">
           <Main />
           <NextScript />
           <script> </script>
