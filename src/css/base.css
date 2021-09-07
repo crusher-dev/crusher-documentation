@@ -9,6 +9,12 @@ abbr[title] {
   color: #dcdcdc !important;
 }
 
+.prose strong{
+
+  color: #dcdcdc !important;
+}
+
+
 .prose h2 {
   color: #dcdcdc !important;
 }
@@ -18,6 +24,15 @@ abbr[title] {
   text-decoration: underline !important;
   box-shadow: none !important;
 
+
+}
+
+
+.prose pre {
+   background-color: #212223;
+  border: 1px solid #333131;
+
+  border-radius: 4px !important;
 }
 
 th{
