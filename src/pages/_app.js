@@ -64,7 +64,7 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <>
-      <Title suffix="Tailwind CSS">{meta.metaTitle || meta.title}</Title>
+      <Title suffix="Crusher.dev test">{meta.metaTitle || meta.title}</Title>
       <Head>
         <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
         <meta key="twitter:site" name="twitter:site" content="@tailwindcss" />
@@ -88,9 +88,9 @@ export default function App({ Component, pageProps, router }) {
           content={`https://tailwindcss.com${twitterLargeCard}`}
         />
       </Head>
-   
+
         <Header navIsOpen={navIsOpen} onNavToggle={(isOpen) => setNavIsOpen(isOpen)} />
-  
+
       <Layout {...layoutProps}>
         <Component {...pageProps} />
       </Layout>
