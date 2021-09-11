@@ -3,6 +3,16 @@ import { createPageList } from '@/utils/createPageList'
 const pages = createPageList(
   require.context(`../pages/docs/?meta=title,shortTitle,published`, false, /\.mdx$/),
   'docs',
+);
+
+const gettingStartedPages = createPageList(
+  require.context(`../pages/docs/getting-started/?meta=title,shortTitle,published`, false, /\.mdx$/),
+  'docs/getting-started'
+)
+
+const sdkPages = createPageList(
+  require.context(`../pages/docs/sdk/?meta=title,shortTitle,published`, false, /\.mdx$/),
+  'docs/sdk'
 )
 
 
@@ -12,12 +22,16 @@ const referencesPages = createPageList(
 )
 
 
-console.log(referencesPages)
+console.log(gettingStartedPages)
 
 export const documentationNav = {
-  'Main': [
-    pages['download'],
-    ],
+  'Getting Started': [
+    gettingStartedPages['downloading-crusher-recorder'],
+    gettingStartedPages['creating-first-test'],
+  ],
+  'SDK': [
+    sdkPages['reference']
+  ],
   // 'Tutorials': [
   //   pages['installation'],
   //   ],

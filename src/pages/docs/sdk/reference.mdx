@@ -1,0 +1,155 @@
+---
+title: SDK Reference
+description: Crusher SDK to create complex custom actions
+---
+import { Heading } from '@/components/Heading'
+import { List, ListItemBad } from '@/components/List'
+import { IntegrationGuides } from '@/components/IntegrationGuides'
+import Link from 'next/link'
+import stats from '@/utils/stats'
+
+## CrusherSDK
+
+Crusher sdk can be accessed by using the global `crusherSdk` which will be available to
+all the custom code actions.
+
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li>
+        <a href="#">crusherSdk.$(selector)</a>
+    </li>
+    <li>
+        <a href="#">crusherSdk.setCookies(cookies)</a>
+    </li>
+    <li>
+        <a href="#">crusherSdk.reloadPage()</a>
+    </li>
+    <li>
+        <a href="#">crusherSdk.sleep(timeout)</a>
+    </li>
+</ul>
+
+### crusherSdk.$(selector)
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li><pre style={{display: "inline", padding: "0.25em"}}>selector</pre> {`<string>`} A selector to query for. See working with selectors for more details.</li>
+    <li>returns: {`<Promise<null|CrusherSDKElement>>`}</li>
+</ul>
+
+The method finds the element with the specified selector and returns a sdk reference to it. If no elements matched with given selector, returns null.
+
+### crusherSdk.setCookies(cookies)
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li>
+        <pre style={{display: "inline", padding: "0.25em"}}>cookies</pre> {`<Array<Object>>`}<br/>
+        <ul className="apiList" style={{listStyle: "none"}}>
+            <li><pre style={{display: "inline", padding: "0.25em"}}>name</pre> {`<string>`}</li>
+            <li><pre style={{display: "inline", padding: "0.25em"}}>value</pre> {`<string>`}</li>
+            <li><pre style={{display: "inline", padding: "0.25em"}}>url</pre> {`<string>`}</li>
+            <li><pre style={{display: "inline", padding: "0.25em"}}>domain</pre> {`<string>`}</li>
+            <li><pre style={{display: "inline", padding: "0.25em"}}>path</pre> {`<string>`}</li>
+            <li><pre style={{display: "inline", padding: "0.25em"}}>expires</pre> {`<number>`} Optional.</li>
+            <li><pre style={{display: "inline", padding: "0.25em"}}>httpOnly</pre> {`<boolean>`}</li>
+            <li><pre style={{display: "inline", padding: "0.25em"}}>secure</pre> {`<boolean>`}</li>
+            <li><pre style={{display: "inline", padding: "0.25em"}}>sameSite</pre> {`<"Strict"|"Lax"|"None">`} Optional.</li>
+        </ul>
+    </li>
+    <li>returns: {`<Promise<boolean>>`}</li>
+</ul>
+
+Sets the cookies in the browser.
+
+### crusherSdk.reloadPage()
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li>returns: {`<Promise<boolean>>`}</li>
+</ul>
+
+Reloads the current page.
+
+### crusherSdk.sleep(timeout)
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li><pre style={{display: "inline", padding: "0.25em"}}>timeout</pre> {`<number>`} In milliseconds.</li>
+    <li>returns: {`<Promise<boolean>>`}</li>
+</ul>
+
+Pauses the test for `timeout` milliseconds.
+
+## CrusherSDKElement
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li>
+        <a href="#">crusherSDKElement.click()</a>
+    </li>
+    <li>
+        <a href="#">crusherSDKElement.hover()</a>
+    </li>
+    <li>
+        <a href="#">crusherSDKElement.focus()</a>
+    </li>
+    <li>
+        <a href="#">crusherSDKElement.fill(text)</a>
+    </li>
+    <li>
+        <a href="#">crusherSDKElement.type(text[,options])</a>
+    </li>
+</ul>
+
+### crusherSDKElement.click()
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li>returns: {`<Promise<boolean>>`}</li>
+</ul>
+
+Perform click action on the element.
+
+### crusherSDKElement.hover()
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li>returns: {`<Promise<boolean>>`}</li>
+</ul>
+
+Perform mouse hover action on the element.
+
+### crusherSDKElement.focus()
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li>returns: {`<Promise<boolean>>`}</li>
+</ul>
+
+Give Focus to the element.
+
+### crusherSDKElement.fill(text)
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li><pre style={{display: "inline", padding: "0.25em"}}>text</pre> {`<string>`}</li>
+    <li>returns: {`<Promise<boolean>>`}</li>
+</ul>
+
+Fills the current element with the text.
+
+### crusherSDKElement.type(text\[,options])
+<ul className="apiList" style={{listStyle: "none"}}>
+    <li><pre style={{display: "inline", padding: "0.25em"}}>text</pre> {`<string>`}</li>
+    <li><pre style={{display: "inline", padding: "0.25em"}}>options</pre> {`<string>`}<br/>
+        <ul className="apiList" style={{listStyle: "none"}}>
+            <li><pre style={{display: "inline", padding: "0.25em"}}>delay</pre> {`<number>`} Time to wait between key presses in milliseconds. Defaults to 0</li>
+        </ul>
+    </li>
+    <li>returns: {`<Promise<boolean>>`}</li>
+</ul>
+
+Types the current element with the text, one character at a time.
+
+<style>{`
+    h3 {
+        color: #fff !important;
+    }
+    .apiList li {
+        padding-left: 1em !important;
+    }
+    .apiList li:before { 
+        content: "" !important;
+        position: absolute !important;
+        background-color: #d1d5db !important;
+        border-radius: 0.250em !important;
+        width: 0.375em !important;
+        height: 0.375em !important;
+        top: calc(0.875em - 0.0625em) !important;
+        left: 0 !important;
+    }
+    `
+}
+</style>
