@@ -46,28 +46,28 @@ console.log(gettingStartedPages)
 export const documentationNav = {
   'Getting Started': [
     gettingStartedPages['downloading-crusher-recorder'],
-    gettingStartedPages['creating-first-test'],
-    gettingStartedPages['invite-team'],
+    // gettingStartedPages['creating-first-test'],
+    // gettingStartedPages['invite-team'],
     gettingStartedPages['set-up-monitoring'],
   ],
   'Recording Test': [
     recordingTestsPage['supported-actions'],
     recordingTestsPage['mobile-tests'],
-    recordingTestsPage['stable-tests'],
-    recordingTestsPage['custom-actions'],
+    // recordingTestsPage['stable-tests'],
+    // recordingTestsPage['custom-actions'],
   ],
   'Managing Tests': [
     managingTestsPage["build-report-overview"],
-    managingTestsPage["visual-diff-comparisions"],
+    // managingTestsPage["visual-diff-comparisions"],
   ],
   'SDK': [
     sdkPages['reference'],
-    sdkPages['guide']
+    // sdkPages['guide']
   ],
   'How To': [
     howToPages['install-crusher-recorder'],
-    howToPages['create-custom-action'],
-    howToPages['set-cookies'],
+    // howToPages['create-custom-action'],
+    // howToPages['set-cookies'],
   ],
   // 'Tutorials': [
   //   pages['installation'],
