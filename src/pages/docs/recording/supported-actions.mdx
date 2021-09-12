@@ -1,6 +1,124 @@
 ---
 title: Supported Actions
-description:
+description: List of actions available when creating tests.
 ---
 
-Hello world!
+One of the main features of crusher is its ability to auto-detect
+all the actions performed by you during recording phase, giving you the ability to create your 
+tests with much more clarity and accuracy.
+
+Broadly the crusher actions are classified into two categories:-
+1) Page Level Actions
+2) Element Level Actions
+
+## Page Level Actions
+
+Generally every action unrelated to a specific element on the page would come under
+this category, including writing custom actions using code.
+
+### Taking screenshot of page
+![Taking screenshot of page](https://i.imgur.com/bYS2QlE.png)
+
+With this action, you can add a visual regression check to the whole
+page. Tests will pass and fail depending on if any thing on this page
+has changed visually.
+
+### Asserting SEO tags on page
+![Adding seo assertions on page](https://i.imgur.com/6irfSAz.png)
+
+This action is useful in making sure your site is always in excellant SEO
+condition. With this action, you can setup assertions for all the seo relevant
+tags including `title`.
+
+There are 3 types of ways in which you can add an assertion,
+- Matches: Strict check to make sure the value matches exactly as what is specified.
+- Contains: Check to make sure the value contains the specified text
+- Regex: Check to make sure the value mathces the regex pattern
+
+**Note**: You can also use `Generate Checks`, which will create check of all the information related to the element.
+
+### Waiting for x seconds
+![Waiting for x seconds](https://i.imgur.com/ZugWdI9.png)
+
+Weather it be waiting for loader to resolve or waiting for a time sensitive
+task from your website to finish, you can use this action to wait for the specified
+seconds.
+
+**Note**: The value must be specified in `seconds`
+### Adding custom code for complex bits.
+![Add custom code](https://i.imgur.com/d6ap2Jk.png)
+
+With this action, you can extend the functionality of crusher and add your own
+custom implementation (e.g setting cookies, db assertions over API, etc.,) of actions according to
+your use-case.
+
+For more detailed information, checkout the `Custom Actions` docs.
+
+## Element Level Actions
+
+Every action directly related to an element will fall under this category. Some of the actions under
+this category are recording automatically by default, so you don't have to explicity record them
+sperately.
+
+**Note**: Every element action that is recorded, automatically records all the relevant hover actions on elements
+if they have somehow affected the element. Checkout `Auto hover` doc for more information
+
+**Note**: To add an element level action, you'll first have to select an element on the
+targeted site. Checkout `Creating your first test` doc on how to do that.
+
+### Click
+**(Supports auto recording)**
+![Click on element](https://i.imgur.com/CgDpdHC.png)
+
+This will perform click on the selected element and record it as a step of your test.
+### Hover
+**(Supports auto recording)**
+![Record hover](https://i.imgur.com/wTLlEmE.png)
+
+This will perform hover on the selected element and record it as a step.
+
+If however the selected element, is hover-dependent on
+any other element on the page (i.e hovering on some other element has affected the selected element) then all
+the hover dependencies will be recorded automatically as hover actions. A two level dropdown is a perfact example of one such situation.
+
+Checkout the `Auto Hover` doc for more information regarding this.
+
+### Screenshot
+![Take element screenshot](https://i.imgur.com/yUIObt0.png)
+
+This will add a step in your test to take screenshot of the selected element. This is useful
+when you want to run visual checks on a particular element.
+
+### Element assertions
+![Element Assertions](https://i.imgur.com/k6L8I2u.png)
+This action will allow you to add assertion over the selected element atrributes and content it has (`innerHTML`, `innerText`).
+
+There are 3 types of ways in which you can add an assertion,
+- Matches: Strict check to make sure the value matches exactly as what is specified.
+- Contains: Check to make sure the value contains the specified text
+- Regex: Check to make sure the value mathces the regex pattern
+
+**Note**: You can also use `Generate Checks`, which will create check of all the information related to the element.
+
+### Add Input
+(Recorded Automatically)
+
+Input actions are recorded automatically, as you navigate the site when recording the test.
+
+### Custom Assertion
+![Add custom element assertion](https://i.imgur.com/S6yWYp8.png)
+
+This action allows you to add custom assertion logic for an element. This is done by writing an custom code
+which returns true or false. `element` reference is passed as the function argument, which you can use to
+write your assertion logic.
+
+If the function returns `true`, it means the assertion has passed<br/>
+And If the function returns `false`, it means the assertion has falled
+
+<style>{`
+    h3 {
+        color: rgb(220 220 220 / 70%) !important;
+    }
+    `
+}
+</style>
