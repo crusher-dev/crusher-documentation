@@ -10,11 +10,30 @@ const gettingStartedPages = createPageList(
   'docs/getting-started'
 )
 
+const howToPages = createPageList(
+  require.context(`../pages/docs/how-to/?meta=title,shortTitle,published`, false, /\.mdx$/),
+  'docs/how-to'
+);
+
 const sdkPages = createPageList(
   require.context(`../pages/docs/sdk/?meta=title,shortTitle,published`, false, /\.mdx$/),
   'docs/sdk'
 )
 
+const integrationPages = createPageList(
+  require.context(`../pages/docs/integration/?meta=title,shortTitle,published`, false, /\.mdx$/),
+  'docs/integration'
+);
+
+const managingTestsPage = createPageList(
+  require.context(`../pages/docs/managing-tests/?meta=title,shortTitle,published`, false, /\.mdx$/),
+  'docs/managing-tests'
+);
+
+const recordingTestsPage = createPageList(
+  require.context(`../pages/docs/recording/?meta=title,shortTitle,published`, false, /\.mdx$/),
+  'docs/recording'
+);
 
 const referencesPages = createPageList(
   require.context(`../pages/docs/references/?meta=title,shortTitle,published`, false, /\.mdx$/),
@@ -28,9 +47,27 @@ export const documentationNav = {
   'Getting Started': [
     gettingStartedPages['downloading-crusher-recorder'],
     gettingStartedPages['creating-first-test'],
+    gettingStartedPages['invite-team'],
+    gettingStartedPages['set-up-monitoring'],
+  ],
+  'Recording Test': [
+    recordingTestsPage['supported-actions'],
+    recordingTestsPage['mobile-tests'],
+    recordingTestsPage['stable-tests'],
+    recordingTestsPage['custom-actions'],
+  ],
+  'Managing Tests': [
+    managingTestsPage["build-report-overview"],
+    managingTestsPage["visual-diff-comparisions"],
   ],
   'SDK': [
-    sdkPages['reference']
+    sdkPages['reference'],
+    sdkPages['guide']
+  ],
+  'How To': [
+    howToPages['install-crusher-recorder'],
+    howToPages['create-custom-action'],
+    howToPages['set-cookies'],
   ],
   // 'Tutorials': [
   //   pages['installation'],
