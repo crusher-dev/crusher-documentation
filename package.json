@@ -13,6 +13,8 @@
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.1",
     "@docsearch/react": "^1.0.0-alpha.27",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.4.1",
     "@headlessui/react": "^0.2.0",
     "@juggle/resize-observer": "^3.2.0",
     "@mdx-js/loader": "^1.6.21",

@@ -5,7 +5,21 @@ import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import clsx from 'clsx'
 import { gradients } from '@/utils/gradients'
 
+ /** @jsx jsx  */
+import { jsx, css } from '@emotion/react'
+
+
 export const SidebarContext = createContext()
+
+const linkStyle = (isActive) => css`
+  padding: 6px 12px;
+  ${isActive ? "color: #9de070; " : ""}
+  ${isActive ? "border: 1px solid; " : ""}
+  :hover{
+    color: #9de070;
+    cursor: pointer;
+  }
+`
 
 const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHref }, ref) => {
   return (
@@ -17,11 +31,8 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
             'hover:text-gray-50 text-gray-100': !isActive && isPublished,
             'text-gray-400': !isActive && !isPublished,
           })}
-          style={{ letterSpacing: '-0.15px', ...(isActive? {
-            backgroundColor: "transparent !important",
-            border: "1px solid #333131 !important",
-            color: "#fff !important"
-          } : {} )}}
+
+          css={linkStyle(isActive)}
         >
           <span
             className={clsx('rounded-md absolute inset-0', {
@@ -35,12 +46,29 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
   )
 })
 
+const getOpenMenu = (nav,router) => {
+  let selectedCategory = null;
+  Object.keys(nav)
+    .forEach((category, i) => {
+      nav[category].forEach((item, i) => {
+        const isCurrentNav = item.href === router.pathname
+        if (isCurrentNav) {
+          selectedCategory = category;
+        }
+      })
+    })
+
+      return selectedCategory
+}
+
 function Nav({ nav, children, fallbackHref = false }) {
   const router = useRouter()
   const activeItemRef = useRef()
   const scrollRef = useRef()
 
-  const [menuOpen, setMenuOpen] = useState(null)
+  const [menuOpen, setMenuOpen] = useState(getOpenMenu(nav,router))
+
+  console.log(menuOpen)
 
   useIsomorphicLayoutEffect(() => {
     if (activeItemRef.current) {
