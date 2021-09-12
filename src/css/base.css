@@ -10,6 +10,7 @@ abbr[title] {
 }
 
 .prose strong{
+    font-weight: 600 !important;
 
   color: #dcdcdc !important;
 }
@@ -27,6 +28,11 @@ abbr[title] {
 
 }
 
+.prose blockquote {
+
+  color: #c7ff84 !important;
+
+}
 
 .prose pre {
    background-color: #212223;
