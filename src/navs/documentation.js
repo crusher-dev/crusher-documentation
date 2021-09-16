@@ -66,6 +66,7 @@ export const documentationNav = {
   ],
   'How To': [
     howToPages['install-crusher-recorder'],
+    howToPages['how-to-setup-crusher-on-docker']
     // howToPages['create-custom-action'],
     // howToPages['set-cookies'],
   ],
