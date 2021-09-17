@@ -15,6 +15,7 @@ const linkStyle = (isActive) => css`
   padding: 6px 12px;
   ${isActive ? "color: #9de070; " : ""}
   ${isActive ? "border: 1px solid; " : ""}
+  font-size:13px;
   :hover{
     color: #9de070;
     cursor: pointer;
@@ -101,7 +102,7 @@ function Nav({ nav, children, fallbackHref = false }) {
               if (publishedItems.length === 0 && !fallbackHref) return null
               const isOpen =  (menuOpen !== null ? menuOpen === category : i === 0)
               return (
-                <li key={category} className="mt-8">
+                <li key={category} className="mt-6">
                   <h5
                     onClick={() => setMenuOpen(category)}
                     className={clsx(

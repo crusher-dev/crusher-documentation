@@ -10,6 +10,12 @@ const gettingStartedPages = createPageList(
   'docs/getting-started'
 )
 
+
+const selfHostPages = createPageList(
+  require.context(`../pages/docs/self-host/?meta=title,shortTitle,published`, false, /\.mdx$/),
+  'docs/self-host'
+)
+
 const howToPages = createPageList(
   require.context(`../pages/docs/how-to/?meta=title,shortTitle,published`, false, /\.mdx$/),
   'docs/how-to'
@@ -41,6 +47,8 @@ const referencesPages = createPageList(
 )
 
 
+
+
 console.log(gettingStartedPages)
 
 export const documentationNav = {
@@ -50,6 +58,17 @@ export const documentationNav = {
     // gettingStartedPages['invite-team'],
     gettingStartedPages['set-up-monitoring'],
   ],
+  'Self host': [
+    selfHostPages['hosting-cost'],
+    // gettingStartedPages['creating-first-test'],
+    // gettingStartedPages['invite-team'],
+  ],
+  // 'Crusher cloud': [
+  //   gettingStartedPages['downloading-crusher-recorder'],
+  //   // gettingStartedPages['creating-first-test'],
+  //   // gettingStartedPages['invite-team'],
+  //   gettingStartedPages['set-up-monitoring'],
+  // ],
   'Recording Test': [
     recordingTestsPage['supported-actions'],
     recordingTestsPage['mobile-tests'],
