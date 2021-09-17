@@ -59,6 +59,7 @@ export const documentationNav = {
     gettingStartedPages['set-up-monitoring'],
   ],
   'Self host': [
+    selfHostPages['how-to-setup-crusher-on-docker'],
     selfHostPages['hosting-cost'],
     // gettingStartedPages['creating-first-test'],
     // gettingStartedPages['invite-team'],
@@ -85,7 +86,7 @@ export const documentationNav = {
   ],
   'How To': [
     howToPages['install-crusher-recorder'],
-    howToPages['how-to-setup-crusher-on-docker']
+
     // howToPages['create-custom-action'],
     // howToPages['set-cookies'],
   ],

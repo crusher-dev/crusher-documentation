@@ -6,6 +6,8 @@ description:
 An OSS version of crusher is available on dockerhub, `crusherdev/crusher:oss1.0`, which can be used to run crusher
 without much configuration.
 
+This works with all major infra as docker is platform-agnostic.
+
 **Note**: The `docker-compose.yml` below also creates mongodb, redis and mysql services since crusher doesn't come with it by default.
 
 1) Create docker-compose.yml
@@ -83,7 +85,7 @@ services:
     docker-compose up -d --force-recreate --no-deps
 ```
 
-3) Wait for 1-2 mins for db migrations to finish on your new setup. 
+3) Wait for 1-2 mins for db migrations to finish on your new setup.
 
 You can also check the logs, to see when db migrations get completed using `docker logs -f crusher_oss`
 
