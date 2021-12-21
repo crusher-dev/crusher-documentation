@@ -316,7 +316,7 @@ export function EditorTools() {
         <BigText className="mb-8">World-class IDE integration.</BigText>
         <Paragraph as="div" className="mb-6">
           <p>
-            Worried about remembering all of these class names? The Tailwind CSS IntelliSense
+            Worried about remembering all of these class names? The Crusher IntelliSense
             extension for VS Code has you covered.
           </p>
           <p>

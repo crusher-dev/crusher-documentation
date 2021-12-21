@@ -74,6 +74,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
                           'text-gray-100': subsectionIsActive,
                         }
                       )}
+                      style={{fontSize: "12px"}}
                     >
                       {subsection.title}
                     </a>
@@ -171,12 +172,12 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
 
   return (
     <>
-    <div id={meta.containerId} className="w-full flex bg-gray-1000">
-      <div className="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16" style={{marginLeft: 50,maxWidth: 750, lineHeight: '290%'}}>
+    <div id={meta.containerId} className="w-full flex bg-gray-1000" >
+      <div className="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16" style={{marginLeft: 'auto',maxWidth: 750, lineHeight: '290%'}}>
         <PageHeader
           title={meta.title}
           description={meta.description}
-          badge={{ key: 'Tailwind CSS version', value: meta.featureVersion }}
+          badge={{ key: 'Crusher version', value: meta.featureVersion }}
           border={!classes && meta.headerSeparator !== false}
         />
         <ContentsContext.Provider value={{ registerHeading, unregisterHeading }}>
@@ -213,7 +214,13 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
               )}
             </div>
           </>
-        )}
+          )}
+
+          <div style={{marginTop: 100}}>
+          <Community/>
+          </div>
+
+
 
         <div>
 
@@ -230,8 +237,8 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
         </div>
       </div>
     </div>
-      <div className={"min-w-0 bg-gray-1000 flex-auto px-8 sm:px-12 xl:px-16 pt-10 pb-24 lg:pb-16"} style={{ maxWidth: 750, }}>
-        <Community/>
+      <div className={"min-w-0 bg-gray-1000 flex-auto px-8 sm:px-12 xl:px-16 pt-10 pb-24 lg:pb-16"} style={{ maxWidth: 750, margin: '0 auto' }}>
+
       </div>
     </>
   )

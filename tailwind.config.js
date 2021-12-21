@@ -19,7 +19,8 @@ module.exports = {
       cyan: colors.cyan,
       emerald: colors.emerald,
       fuchsia: colors.fuchsia,
-      gray: { ...colors.coolGray, 500: '#686868', 1000: '#0f1010' },
+      gray: { ...colors.coolGray, 500: '#686868', 1000: '#121417'
+    },
       green: colors.green,
       indigo: colors.indigo,
       'light-blue': colors.lightBlue,

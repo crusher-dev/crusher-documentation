@@ -1,6 +1,6 @@
 export function Community() {
   return (
-    <ul className="grid sm:grid-cols-2 gap-6 xl:gap-8 ">
+    <ul className="grid sm:grid-cols-1 gap-6 xl:gap-8 ">
       <li>
         <a
           href="https://github.com/crusherdev/crusher"
@@ -15,7 +15,7 @@ export function Community() {
             />
           </svg>
           <div className="flex-auto">
-            <h3 className="font-bold text-gray-100">GitHub Project</h3>
+            <h3 className="font-bold text-gray-100 leading-none">GitHub Project</h3>
             <p>Connect with members of the Crusher community.</p>
           </div>
         </a>

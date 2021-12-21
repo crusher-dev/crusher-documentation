@@ -57,7 +57,7 @@ const whatsNew = [
 
 export default function DocsLandingPage() {
   return (
-    <div className="px-4 sm:px-6 xl:px-8 pt-24 pb-16 bg-gray-1000">
+    <div className="px-4 sm:px-6 xl:px-8 pt-24 pb-16 bg-gray-1000" style={{width: "1020px", maxWidth: "100%", margin: "0 auto"}}>
       <h1 className="text-4xl leading-none font-extrabold text-gray-100 tracking-tight mb-4">
         Getting started with Crusher
       </h1>

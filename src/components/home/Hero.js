@@ -21,7 +21,7 @@ const { tokens, code } = tokenize.html(
   <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
     <blockquote>
       <p class="text-lg font-semibold">
-        “Tailwind CSS is the only framework that I've seen scale
+        “Crusher is the only framework that I've seen scale
         on large teams. It’s easy to customize, adapts to any design,
         and the build size is tiny.”
       </p>
@@ -364,7 +364,7 @@ export function Hero() {
                 >
                   <motion.div layout={layout} className="mb-4" transition={TRANSITION}>
                     <Words bolder={step >= 3} layout={layout} transition={TRANSITION}>
-                      “Tailwind CSS is the only framework that I've seen scale on large teams. It’s
+                      “Crusher is the only framework that I've seen scale on large teams. It’s
                       easy to customize, adapts to any design, and the build size is tiny.”
                     </Words>
                   </motion.div>

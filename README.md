@@ -1,4 +1,4 @@
-# Tailwind CSS Documentation
+# Crusher Documentation
 
 Crusher uses [Next.js](https://nextjs.org/) for its documentation.
 

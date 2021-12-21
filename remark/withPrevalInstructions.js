@@ -239,13 +239,13 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
               outdatedVersions.length === 1 ? "doesn't" : "don't"
             } support PostCSS 8 yet${
               soon ? " _(but it's coming soon)_" : ''
-            } so you need to install [the Tailwind CSS v2.0 PostCSS 7 compatibility build](/docs/installation#post-css-7-compatibility-build) for now as we've shown above.`
+            } so you need to install [the Crusher v2.0 PostCSS 7 compatibility build](/docs/installation#post-css-7-compatibility-build) for now as we've shown above.`
           : ''
 
       return md(`
-        ## Setting up Tailwind CSS
+        ## Setting up Crusher
 
-        *Tailwind CSS requires Node.js 12.13.0 or higher.*
+        *Crusher requires Node.js 12.13.0 or higher.*
 
         ### Install Tailwind via npm
 
@@ -306,7 +306,7 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
         You're finished! Now when you run ${joinAsSpeech(
           scripts.map(quote('`')),
           ' or '
-        )}, Tailwind CSS will be ready to use in your ${tool} project.
+        )}, Crusher will be ready to use in your ${tool} project.
 
         [Next learn about the utility-first workflow &rarr;](/docs/utility-first)
       `)

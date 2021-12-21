@@ -33,7 +33,7 @@ export default function Resources() {
           </p>
         </div>
         <p>
-          For Tailwind CSS brand assets and usage guidelines, please visit our{' '}
+          For Crusher brand assets and usage guidelines, please visit our{' '}
           <Link href="/brand">
             <a className="text-cyan-700 font-medium shadow-link">Brand page</a>
           </Link>
@@ -65,7 +65,7 @@ export default function Resources() {
           </div>
         </section>
         <section>
-          <h2 className="text-xl text-gray-100 font-bold mb-4">Official Tailwind CSS Components</h2>
+          <h2 className="text-xl text-gray-100 font-bold mb-4">Official Crusher Components</h2>
           <a
             href="https://tailwindui.com/"
             className="h-40 sm:h-56 xl:h-64 bg-gray-300 rounded-3xl mb-6 overflow-hidden flex"
@@ -106,7 +106,7 @@ export default function Resources() {
           </a>
           <p>
             Completely unstyled, fully accessible UI components, designed to integrate beautifully
-            with Tailwind CSS.
+            with Crusher.
           </p>
         </section>
         <section>

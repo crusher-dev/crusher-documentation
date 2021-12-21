@@ -68,9 +68,6 @@ function Nav({ nav, children, fallbackHref = false }) {
   const scrollRef = useRef()
 
   const [menuOpen, setMenuOpen] = useState(getOpenMenu(nav,router))
-
-  console.log(menuOpen)
-
   useIsomorphicLayoutEffect(() => {
     if (activeItemRef.current) {
       const scrollRect = scrollRef.current.getBoundingClientRect()
@@ -260,17 +257,18 @@ function TopLevelNav() {
 export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar, fallbackHref }) {
   return (
     <SidebarContext.Provider value={{ nav, navIsOpen, setNavIsOpen }}>
-      <div className="w-full max-w-8xl mx-auto">
+      <div className="w-full mx-auto">
         <div className="lg:flex">
           <div
             id="sidebar"
             onClick={() => setNavIsOpen(false)}
             className={clsx(
-              'fixed z-40 inset-0 flex-none  h-full text-white w-full lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block bg-gray-1000',
+              'fixed z-40 inset-0 flex-none  h-full text-white w-full lg:static lg:h-auto lg:overflow-y-visible lg:pt-4 lg:w-60 xl:w-72 lg:block bg-gray-1000',
               {
                 hidden: !navIsOpen,
               }
             )}
+            style={{background: "#0a0c0e", borderRight: "1px solid #0a0c0e !important", minHeight: "calc(100vh - 00px)", }}
           >
             <div
               id="navWrapper"
@@ -291,6 +289,7 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
                 'overflow-hidden max-h-screen fixed': navIsOpen,
               }
             )}
+            style={{paddingTop: 80,boxShadow: "-8px 0px 07px 08px #ffffff01;", zIndex: 50}}
           >
             {children}
           </div>
